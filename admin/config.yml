@@ -1,0 +1,63 @@
+backend:
+  name: test-repo
+
+media_folder: "images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "practice"
+        label: "Practice Information"
+        file: "_data/practice.json"
+        fields:
+          - { label: "Practice Name", name: "name", widget: "string", default: "Your Possibilities" }
+          - { label: "Practitioner Name", name: "practitioner", widget: "string", default: "Robin Rooth-Fogel, LCSW" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Imagine the Possibilities" }
+          - { label: "Credential Line", name: "credential", widget: "string", default: "Licensed Clinical Social Worker" }
+          - { label: "Phone", name: "phone", widget: "string", default: "(610) 282-2015" }
+          - { label: "Email", name: "email", widget: "string", default: "robin@yourpossibilities.us" }
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Street", name: "street", widget: "string", default: "202 S. Third Street (Rt. 309), Suite 1" }
+              - { label: "City", name: "city", widget: "string", default: "Coopersburg" }
+              - { label: "State", name: "state", widget: "string", default: "PA" }
+              - { label: "Zip", name: "zip", widget: "string", default: "18036" }
+          - label: "Office Hours"
+            name: "hours"
+            widget: "list"
+            fields:
+              - { label: "Days", name: "days", widget: "string" }
+              - { label: "Hours", name: "time", widget: "string" }
+
+      - name: "about"
+        label: "About Section"
+        file: "_data/about.json"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string", default: "About Robin" }
+          - { label: "Headshot", name: "headshot", widget: "image", required: false }
+          - { label: "Bio", name: "bio", widget: "markdown" }
+
+      - name: "services"
+        label: "Services"
+        file: "_data/services.json"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Services" }
+          - { label: "Section Intro", name: "intro", widget: "text" }
+          - label: "Service List"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Service Name", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+      - name: "contact"
+        label: "Contact Section"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Section Heading", name: "heading", widget: "string", default: "Get in Touch" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - { label: "Privacy Notice", name: "privacy_note", widget: "text", default: "Do not send clinical or personal health information via email or through this website. For urgent matters, please call the office directly. If you are experiencing a mental health emergency, call 988 (Suicide & Crisis Lifeline) or go to your nearest emergency room." }
+          - { label: "Footer Disclaimer", name: "disclaimer", widget: "text" }
